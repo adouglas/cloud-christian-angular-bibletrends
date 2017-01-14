@@ -1,1 +1,6 @@
 .DS_Store
+
+Source/server/node_modules/**/*
+Source/server/dist/**/*
+Source/app/node_modules/**/*
+Source/app/dist/**/*

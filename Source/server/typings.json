@@ -1,0 +1,6 @@
+{
+  "name": "cloud-marketing-express-trudisplay",
+  "globalDependencies": {
+    "express": "registry:npm/express#4.14.0+20160925001530"
+  }
+}
