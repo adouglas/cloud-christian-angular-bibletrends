@@ -19,10 +19,7 @@ RUN npm install
 RUN npm build
 
 # Create a directory where our app will be placed
-RUN mkdir -p /usr/src/app
-
-# Copy dependency definitions
-COPY dist /usr/src/app
+RUN mkdir -p /usr/src && cp dist/ /usr/src/app/
 
 # Change directory so that our commands run inside this new dir
 WORKDIR /usr/src/app

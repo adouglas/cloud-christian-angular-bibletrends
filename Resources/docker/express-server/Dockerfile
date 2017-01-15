@@ -19,10 +19,7 @@ RUN npm install
 RUN npm run dist
 
 # Create a directory where our server will be placed
-RUN mkdir -p /usr/src/server
-
-# Copy dependency definitions
-COPY dist /usr/src/server
+RUN mkdir -p /usr/src && mv dist/ /usr/src/server/
 
 # Change directory so that our commands run inside this new dir
 WORKDIR /usr/src/server
