@@ -1,9 +1,6 @@
 # Create image based off of the official Node 6 image
 FROM node:6.9.2-alpine
 
-# Create image based off of the official Node 6 image
-FROM node:6.9.2-alpine
-
 RUN set -ex \
     && apk update \
     && apk add --no-cache git
@@ -18,7 +15,7 @@ WORKDIR /home/cloud-christian-angular-bibletrends/Source/server
 RUN npm install
 
 # Install dependecies
-RUN npm build
+RUN npm run dist
 
 # Create a directory where our server will be placed
 RUN mkdir -p /usr/src/server
