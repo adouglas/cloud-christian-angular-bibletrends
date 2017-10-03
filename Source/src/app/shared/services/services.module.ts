@@ -12,10 +12,7 @@ import { SearchService } from './search.service';
       providers: [
         BibleService,
         SearchService
-      ],
-  exports: [
-    // ServicesModule,
-  ],
+      ]
 })
 
 export class ServicesModule { }

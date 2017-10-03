@@ -17,11 +17,23 @@ export class SidenavComponent implements OnInit {
   ) { }
 
   public ngOnInit(): void {
-    this.router.events
-      .subscribe(event => {
-        if (event instanceof NavigationStart) {
-          this.sidenavService.close().then(() => { });
-        }
-      });
+    // this.router.events
+    //   .subscribe(event => {
+    //     if (event instanceof NavigationStart) {
+    //       this.sidenavService.close().then(() => { });
+    //     }
+    //   });
+  }
+
+  public closeMenu() {
+    this.sidenavService.close();
+  }
+
+  public openLanguageMenu() {
+    this.router.navigate([{ outlets: { sidenav: [ 'language-menu' ] }}], { skipLocationChange: true });
+  }
+
+  public openBibleMenu() {
+    this.router.navigate([{ outlets: { sidenav: [ 'bible-menu' ] }}], { skipLocationChange: true });
   }
 }

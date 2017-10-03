@@ -1,0 +1,14 @@
+<nav>
+        <div class="menu-nav">
+            <button md-icon-button (click)="closeMenu()"  class="close-button">
+                <md-icon>clear</md-icon>
+            </button>
+            <button md-icon-button (click)="backMenu()"  class="back-button">
+                <md-icon>keyboard_backspace</md-icon>
+            </button>
+        </div>
+        <ul>
+            <li (click)="selectBible('here')">here</li>
+            <li (click)="selectBible('there')">there</li>
+        </ul>
+    </nav>

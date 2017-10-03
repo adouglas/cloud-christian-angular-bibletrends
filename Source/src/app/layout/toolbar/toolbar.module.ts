@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { MdIconModule, MdInputModule, MdMenuModule } from '@angular/material';
+import { MdIconModule, MdInputModule, MdMenuModule, MdToolbarModule } from '@angular/material';
 
 import { SharedModule } from '../../shared/shared.module';
 
@@ -12,6 +12,7 @@ import { ToolbarComponent } from './toolbar.component';
     MdIconModule,
     MdInputModule,
     MdMenuModule,
+    MdToolbarModule,
     SharedModule
   ],
   declarations: [

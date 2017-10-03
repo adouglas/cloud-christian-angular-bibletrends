@@ -1,10 +1,11 @@
-import { Routes } from '@angular/router';
-
 import { SidenavComponent } from './sidenav.component';
 import { LanguageMenuComponent } from './language-menu.component';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+
 import { BibleMenuComponent } from './bible-menu.component';
 
-export const LayoutSidenavRoutes: Routes = [
+export const layoutSidenavRoutes: Routes = [
   {
     path: '',
     component: SidenavComponent,
@@ -21,3 +22,14 @@ export const LayoutSidenavRoutes: Routes = [
     outlet: 'sidenav',
   }
 ];
+
+@NgModule({
+  imports: [
+    RouterModule.forChild(layoutSidenavRoutes)
+  ],
+  exports: [
+    RouterModule
+  ]
+})
+
+export class LayoutSidenavRoutingModule { }

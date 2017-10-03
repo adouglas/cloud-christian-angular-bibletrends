@@ -16,11 +16,24 @@ export class BibleMenuComponent implements OnInit {
   ) { }
 
   public ngOnInit(): void {
-    this.router.events
-      .subscribe(event => {
-        if (event instanceof NavigationStart) {
-          this.sidenavService.close().then(() => { });
-        }
-      });
+  //   this.router.events
+  //     .subscribe(event => {
+  //       if (event instanceof NavigationStart) {
+  //         this.sidenavService.close().then(() => { });
+  //       }
+  //     });
+  }
+
+  public closeMenu() {
+    this.sidenavService.close();
+  }
+
+  public backMenu() {
+    this.router.navigate([{ outlets: { sidenav: [ ] }}], { skipLocationChange: true });
+  }
+
+  public selectBible(bible) {
+    console.log(bible);
+    this.sidenavService.close();
   }
 }

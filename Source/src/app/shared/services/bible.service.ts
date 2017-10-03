@@ -59,9 +59,12 @@ export class BibleService {
   getLanguages(): Observable < string[] > {
     return this.getBibles()
     .map(res => {
-      return _.uniq(res.map(item => {
+      return _.sortBy(
+        _.uniq(res.map(item => {
         return item.language_code;
-      }));
+      }))
+      ,
+      function(o){return o; });
     });
   }
 

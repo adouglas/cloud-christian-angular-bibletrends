@@ -1,0 +1,15 @@
+<nav>
+        <div class="menu-nav">
+            <button md-icon-button (click)="closeMenu()"  class="close-button">
+                <md-icon>clear</md-icon>
+            </button>
+            <button md-icon-button (click)="backMenu()"  class="back-button">
+                <md-icon>keyboard_backspace</md-icon>
+            </button>
+        </div>
+        <ul>
+            <li *ngFor='let language of languages | async' (click)="selectLanguage(language)">
+                <span>{{language | languageName}}</span>
+            </li>
+        </ul>
+    </nav>

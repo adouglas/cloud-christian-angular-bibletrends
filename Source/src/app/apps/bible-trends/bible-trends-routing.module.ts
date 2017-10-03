@@ -5,6 +5,11 @@ import { BibleTrendsComponent } from './bible-trends.component';
 
 const appRoutes: Routes = [
   {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'bible-trends'
+  },
+  {
     path: 'bible-trends',
     pathMatch: 'full',
     component: BibleTrendsComponent
