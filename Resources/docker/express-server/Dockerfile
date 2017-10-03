@@ -7,7 +7,7 @@ RUN set -ex \
 
 WORKDIR /home
 
-ARG commithash=#d81d2a91250a914e70cd6c68a8137d0b84d2cba0
+ARG commithash=#f8068035cf77059b4fcb26450d16c4296a4006d2
 RUN git clone https://github.com/adouglas/cloud-christian-angular-bibletrends.git
 
 WORKDIR /home/cloud-christian-angular-bibletrends/Source/server

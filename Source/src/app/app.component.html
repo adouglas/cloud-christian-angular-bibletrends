@@ -1,0 +1,12 @@
+<md-sidenav-container class="main-container">
+    <md-sidenav #sideMenu align="end" class="sideMenu">
+        <router-outlet name="sideMenu"></router-outlet>
+    </md-sidenav>
+  
+    <div class="main-content">
+        <app-toolbar></app-toolbar>
+        <div style="text-align:center" class="body">
+            <router-outlet name="mainContent"></router-outlet>
+        </div>
+    </div>
+</md-sidenav-container>

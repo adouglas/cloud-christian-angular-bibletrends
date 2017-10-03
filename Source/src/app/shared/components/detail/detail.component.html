@@ -1,0 +1,14 @@
+<div id="{{bookID}}" class="book">
+  <span class="title">{{book.full_title}}</span>
+  <div class="results">
+    <div *ngFor="let result of book.results; let isLast=last" class="result">
+      <div class="text">{{result.text}}</div>
+      <div class="location-info">
+        <span class="chapter">Chapter: {{result.chapter_number}}</span>
+        <span class="verse">Verse: {{result.verse_number}}</span>
+      </div>
+      <hr *ngIf="!isLast">
+    </div>
+  </div>
+  <hr *ngIf="!isLast">
+</div>

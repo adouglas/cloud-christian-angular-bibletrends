@@ -1,0 +1,27 @@
+<md-toolbar class="fixed">
+  <div class="app-menu-container">
+    <button md-icon-button [mdMenuTriggerFor]="appmenu"  class="toolbar-button">
+        <md-icon>apps</md-icon>
+      </button>
+      <md-menu #appmenu="mdMenu">
+        <button md-menu-item>
+          <md-icon>show chart</md-icon>
+          <span>Bible Trends</span>
+        </button>
+        <button md-menu-item disabled>
+          <md-icon>pie chart</md-icon>
+          <span>Bible Pie</span>
+        </button>
+      </md-menu>
+  </div>
+  <form class="example-form" class="search-container">
+      <md-input-container floatPlaceholder="never" [class.app-input-no-underline]="true">
+        <md-icon mdPrefix>search</md-icon>
+        <input type="text" mdInput placeholder="Search for a word or phrase" (keyup)="searchTerm$.next($event.target.value)">
+      </md-input-container>
+    </form>
+    <div class="selectors-container">
+    <app-settings></app-settings>
+    <app-help></app-help>
+    </div>
+  </md-toolbar>

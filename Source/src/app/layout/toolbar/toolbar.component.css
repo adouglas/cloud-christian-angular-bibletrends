@@ -1,0 +1,72 @@
+.fixed{
+  position: fixed;
+}
+
+.mat-toolbar {
+  background: #393E46;
+  color: rgba(255, 255, 255, 0.87);
+  box-shadow: 0 0 8px rgba(0,0,0,0.12), 0 8px 8px rgba(0,0,0,0.24);
+  min-height: 55px;
+}
+
+
+::ng-deep .mat-toolbar .mat-toolbar-row {
+  height: 55px;
+}
+
+.app-menu-container{
+  position:absolute;
+  left:0;
+  width:64px;
+}
+
+.search-container{
+  height:100%;
+  width: 100%;
+  margin: 0 220px 0 64px;
+}
+
+.search-container .mat-input-container{
+  width: 100%;
+  color: rgba(255, 255, 255, 0.87);
+  margin-top: -12px;
+}
+
+::ng-deep .search-container .mat-input-placeholder{
+  color: rgba(255, 255, 255, 0.87);  
+}
+
+.search-container .mat-input-container input{
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.selectors-container{
+  position:absolute;
+  right:0;
+  top:0;
+}
+
+.selectors-container .language-menu-container{
+  position:absolute;
+  height: 64px;
+  width: 64px;
+}
+
+.selectors-container .bible-menu-container{
+  height: 64px;
+  margin-left: 64px;
+  text-overflow: ellipsis;
+}
+
+.bible-selector {
+  height: 64px;
+  width: 140px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.toolbar-button{
+  height: 55px;
+  width: 55px;
+}

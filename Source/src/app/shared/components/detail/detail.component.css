@@ -1,0 +1,18 @@
+.title{
+    float: left;
+}
+
+.results{
+    margin-left: 15%;
+}
+
+.location-info{
+    text-align: left;
+    font-size: 0.7em;
+    margin-top: 10px;
+    color: #bbb;
+}
+
+.text{
+    text-align: left;   
+}

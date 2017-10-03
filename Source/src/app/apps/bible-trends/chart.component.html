@@ -1,0 +1,11 @@
+<div class="chart-container" *ngIf="barChartData[0].data.length > 0">
+        <canvas baseChart
+                [datasets]="barChartData"
+                [labels]="barChartLabels"
+                [options]="barChartOptions"
+                [colors]="barChartColors"
+                [legend]="barChartLegend"
+                [chartType]="barChartType"
+                (chartClick)="chartClicked($event)"
+                ></canvas>
+      </div>
