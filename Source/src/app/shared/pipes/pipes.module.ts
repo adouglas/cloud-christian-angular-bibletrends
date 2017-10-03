@@ -7,7 +7,7 @@ import { LanguageNamePipe } from './language-name.pipe';
         LanguageNamePipe
       ],
   exports: [
-    PipesModule,
+    LanguageNamePipe,
   ],
 })
 

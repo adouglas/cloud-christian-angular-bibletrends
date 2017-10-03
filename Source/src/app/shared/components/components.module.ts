@@ -1,14 +1,21 @@
-import {NgModule} from '@angular/core';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
-import {DetailComponent} from './detail/detail.component';
-import {ResultsComponent} from './results/results.component';
+import { DetailComponent } from './detail/detail.component';
+import { ResultsComponent } from './results/results.component';
 
 @NgModule({
-  imports: [],
-  declarations: [
-    DetailComponent, ResultsComponent
+  imports: [
+    CommonModule
   ],
-  exports: [DetailComponent, ResultsComponent]
+  declarations: [
+    DetailComponent,
+    ResultsComponent
+  ],
+  exports: [
+    DetailComponent,
+    ResultsComponent
+  ]
 })
 
 export class ComponentsModule {}

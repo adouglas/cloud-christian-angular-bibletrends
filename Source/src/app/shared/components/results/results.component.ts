@@ -10,7 +10,12 @@ import {SearchService} from '../../services/search.service';
 
 import {Bible} from '../../services/bible';
 
-@Component({moduleId: module.id, selector: 'app-results', templateUrl: 'results.component.html', styleUrls: ['results.component.css']})
+@Component({
+    moduleId: module.id,
+    selector: 'app-results',
+    templateUrl: 'results.component.html',
+    styleUrls: ['results.component.css']
+})
 
 export class ResultsComponent implements OnInit {
 

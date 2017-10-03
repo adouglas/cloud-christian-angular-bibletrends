@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 
 import { LayoutModule } from './layout/layout.module';
+import { BibleTrendsModule } from './apps/bible-trends/bible-trends.module';
 
 import { AppComponent } from './app.component';
 
@@ -18,6 +19,7 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     AppRoutingModule,
+    BibleTrendsModule,
     LayoutModule,
     RouterModule,
     FormsModule,
