@@ -7,8 +7,14 @@
                 <md-icon>keyboard_backspace</md-icon>
             </button>
         </div>
-        <ul>
-            <li (click)="selectBible('here')">here</li>
-            <li (click)="selectBible('there')">there</li>
-        </ul>
+        <div class="list-container">
+            <ul>
+                <li *ngFor='let bible of bibles | async; let first = first; let last = last'
+                (click)="selectBible(bible)"
+                [class.first-item]="first"
+                [class.last-item]="last">
+                    <span>{{bible.full_name}}</span>
+                </li>
+            </ul>
+        </div>
     </nav>

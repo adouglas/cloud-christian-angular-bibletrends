@@ -1,31 +1,5 @@
 <div class="settings-container">
-    <!-- <button md-icon-button [mdMenuTriggerFor]="settingsMenu"  class="toolbar-button">
-        <md-icon>settings</md-icon>
-    </button> -->
-
     <button md-icon-button (click)="openSideMenu()"  class="toolbar-button">
         <md-icon>settings</md-icon>
     </button>
-
-    <!-- <md-menu #settingsMenu="mdMenu">
-            <button md-menu-item [mdMenuTriggerFor]="languageMenu">
-                Language: {{selectedLanguage}}
-            </button>
-            <button md-menu-item [mdMenuTriggerFor]="bibleMenu">
-                Bible: {{selectedBible.full_name}}
-            </button>
-        </md-menu>
-
-    <md-menu #languageMenu="mdMenu">
-      <button *ngFor='let language of languages | async' (click)="selectLanguage(language)" md-menu-item>
-                      <span>{{language}}</span>
-                    </button>
-    </md-menu>
-
-
-    <md-menu #bibleMenu="mdMenu">
-      <button *ngFor='let bible of bibles | async' (click)="selectBible(bible)" md-menu-item>
-                      <span>{{bible.full_name}}</span>
-                    </button>
-    </md-menu> -->
 </div>

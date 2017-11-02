@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 
 import { Observable } from 'rxjs/Rx';
-import { Subject } from 'rxjs/Subject';
+import { ReplaySubject } from 'rxjs/ReplaySubject';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/publishReplay';
 
 import * as _ from 'lodash';
 
-import {Bible} from './bible';
+import { Bible } from './bible';
 
 @Injectable()
 export class BibleService {
@@ -21,8 +21,8 @@ export class BibleService {
   private bibles: Observable < Bible[] > = null;
   private languages: string[] = null;
 
-  private currentBible: Subject<Bible> = new Subject<Bible>();
-  private currentLanguage: string = null;
+  private currentBible: ReplaySubject<Bible> = new ReplaySubject<Bible>(1);
+  private currentLanguage: ReplaySubject<string> = new ReplaySubject<string>(1);
 
   constructor(private http: Http) {
     this.biblesUrl = this.host + '/' + this.url;
@@ -39,7 +39,8 @@ export class BibleService {
           return new Bible(
               item.name,
               item.full_name,
-              item.language_code
+              item.language_code,
+              item.default_for_language
           );
         });
       })
@@ -56,6 +57,18 @@ export class BibleService {
     });
   }
 
+  getDefaultBibleForLanguage(language: string): Observable < Bible > {
+    return this.getBibles()
+    .map(res => {
+      console.log(res);
+      const defaultBibles = res.filter(item => ((item.language_code === language) && (item.default_for_language === true)));
+      if (defaultBibles && (defaultBibles.length > 0)) {
+        return defaultBibles[0];
+      }
+      return null;
+    }).first();
+  }
+
   getLanguages(): Observable < string[] > {
     return this.getBibles()
     .map(res => {
@@ -68,8 +81,20 @@ export class BibleService {
     });
   }
 
+  setCurrentLanguage(language: string ) {
+    console.log('Language set to: ' + language);
+    this.currentLanguage.next(language);
+  }
+
+  getCurrentLanguage(): Observable<string> {
+    return this.currentLanguage.asObservable();
+  }
+
+
+
   setCurrentBible(bible: Bible): Observable<Bible> {
-    console.log(bible.full_name);
+    console.log('Set current bible: ' + bible.full_name);
+
     return this.http
     .get(this.host + '/api/bibles/' + bible.language_code + '-' + bible.name.toLowerCase() + '/metadata')
     .map(res => {
@@ -78,6 +103,7 @@ export class BibleService {
         json.name,
         json.full_name,
         json.language_code,
+        json.default_for_language
       );
       bibleMetadata.books = json.books;
       this.currentBible.next(bibleMetadata);

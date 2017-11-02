@@ -40,7 +40,17 @@ export class LanguageMenuComponent implements OnInit {
   }
 
   public selectLanguage(language) {
-    console.log(language);
-    this.sidenavService.close();
+
+    this.bibleService.setCurrentLanguage(language);
+
+    this.router.navigate([
+      {outlets: { sidenav: [ 'bible-menu' ] }}
+    ],
+       {
+         skipLocationChange: true,
+        queryParams: {
+          previousRoute: 'language-menu'
+        }
+      });
   }
 }

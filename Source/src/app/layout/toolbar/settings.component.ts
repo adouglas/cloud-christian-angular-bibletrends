@@ -22,7 +22,7 @@ export class SettingsComponent implements OnInit {
     public bibles: Observable<Bible[]>;
 
     public selectedLanguage: string;
-    public selectedBible: Bible = new Bible('', '', '');
+    public selectedBible: Bible = new Bible('', '', '', false);
 
   constructor(private bibleService: BibleService, private sidenavService: SidenavService) {
     this.selectLanguage('en');

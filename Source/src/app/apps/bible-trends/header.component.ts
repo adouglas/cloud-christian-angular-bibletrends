@@ -26,10 +26,12 @@ export class HeaderComponent implements OnInit {
   constructor(private bibleService: BibleService, private searchService: SearchService) { }
 
   ngOnInit(): void {
+    console.log('ngOnInit');
     this.bibleService.getCurrentBible()
     .subscribe(results => {
       this.language = results.language_code;
       this.bible = results.full_name;
+      console.log('New bible: ' + this.bible);
     });
 
     this.searchService.results()

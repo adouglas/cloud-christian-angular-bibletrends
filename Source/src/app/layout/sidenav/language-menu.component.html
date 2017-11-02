@@ -7,9 +7,14 @@
                 <md-icon>keyboard_backspace</md-icon>
             </button>
         </div>
-        <ul>
-            <li *ngFor='let language of languages | async' (click)="selectLanguage(language)">
-                <span>{{language | languageName}}</span>
-            </li>
-        </ul>
+        <div class="list-container">
+            <ul>
+                <li *ngFor='let language of languages | async; let first = first; let last = last'
+                 (click)="selectLanguage(language)"
+                 [class.first-item]="first"
+                 [class.last-item]="last">
+                    <span>{{language | languageName}}</span>
+                </li>
+            </ul>
+        </div>
     </nav>

@@ -34,6 +34,6 @@ export class SidenavComponent implements OnInit {
   }
 
   public openBibleMenu() {
-    this.router.navigate([{ outlets: { sidenav: [ 'bible-menu' ] }}], { skipLocationChange: true });
+    this.router.navigate([{ outlets: { sidenav: [ 'bible-menu' ] }}], { skipLocationChange: true, queryParams: { previousRoute: '' }});
   }
 }

@@ -32,7 +32,7 @@ export class SearchService {
     .debounceTime(400)
       .distinctUntilChanged()
       .switchMap((search, idx) => {
-        console.log(search);
+        console.log('Searching for: ' + search);
         return this.search(search[0], 'bibledata-' + search[1].language_code + '-' + search[1].name.toLowerCase())
       }).subscribe(res => this.resultStream.next(res));
   }

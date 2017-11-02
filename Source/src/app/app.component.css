@@ -9,3 +9,7 @@
 .side-menu{
     width: 230px;
 }
+
+.mat-sidenav-content {
+    transform: none !important;
+}

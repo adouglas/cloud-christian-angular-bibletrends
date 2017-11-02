@@ -3,6 +3,9 @@
 }
 
 .toolbar-button{
+    background-color: transparent;
+    border: 0;
+    color: #EEE;
     height: 55px;
     width: 55px;
   }

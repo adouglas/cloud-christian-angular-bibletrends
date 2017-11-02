@@ -4,8 +4,16 @@
             <md-icon>clear</md-icon>
         </button>
     </div>
-    <ul>
-        <li (click)="openLanguageMenu()">Language</li>
-        <li (click)="openBibleMenu()">Bible version</li>
-    </ul>
+    <div>
+        <ul>
+            <li (click)="openLanguageMenu()" class="first">
+                <div class="option-title">Language</div>
+                <div class="current-selection">current: </div>
+            </li>
+            <li (click)="openBibleMenu()">
+                <div class="option-title">Bible version</div>
+                <div class="current-selection">current: </div>
+            </li>
+        </ul>
+    </div>
 </nav>

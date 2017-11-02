@@ -12,6 +12,8 @@ body{
     background: #eee;
 }
 
+button, input, textarea, select, a { outline: none; }
+
 .mat-input-container.app-input-no-underline .mat-input-underline {
     display: none;
-  }
+}
